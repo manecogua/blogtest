@@ -11,7 +11,7 @@
     <div class="col-6">
         <div class="card border-light">
             <div class="card-body">
-                <h4 class="card-title"><a href="" class="text-decoration-none">{{$post->title}}</a></h4>
+                <h4 class="card-title"><a href="{{ url('/posts') . '/' . $post->id }}" class="text-decoration-none">{{$post->title}}</a></h4>
                 <p class="card-text">{{$post->body}}</p>
             </div>
         </div>
