@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Domain\IPostSearcherService;
 use Illuminate\Http\Request;
 use App\Infraestructure\IPostsApi;
 use App\Infraestructure\IAuthorsApi;
@@ -14,9 +15,9 @@ class PostWebController extends Controller
      *
      * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
-    public function getPosts(IPostsApi $iPostsApi)
+    public function getPosts(IPostSearcherService $iPostSearcherService)
     {
-        $arrayPosts = $iPostsApi->getPosts()->object();
+        $arrayPosts = $iPostSearcherService->getPosts();
 
         return view('posts', compact('arrayPosts'));
     }
@@ -26,7 +27,7 @@ class PostWebController extends Controller
      *
      * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
-    public function getPost(IPostsApi $iPostsApi, IAuthorsApi $iAuthorsApi, $id)
+    public function getPost(IPostsApi $iPostsApi, IAuthorsApi $iAuthorsApi, int $id)
     {
         $post = $iPostsApi->getPost($id)->object();
         $author = $iAuthorsApi->getAuthor($id)->object();
