@@ -9,16 +9,16 @@ class PostsApi implements IPostsApi
 {
     public function getPosts(): Response
     {
-        return Http::get(env('URL_JSONPLACEHOLDER_API').'/posts');
+        return Http::get(env('URL_JSONPLACEHOLDER_API').'/posts')->throw();
     }
 
     public function getPost(int $id): Response
     {
-        return Http::get(env('URL_JSONPLACEHOLDER_API').'/posts/'.$id);
+        return Http::get(env('URL_JSONPLACEHOLDER_API').'/posts/'.$id)->throw();
     }
 
     public function storePost(array $request): Response
     {
-        return Http::post(env('URL_JSONPLACEHOLDER_API').'/posts', $request);
+        return Http::post(env('URL_JSONPLACEHOLDER_API').'/posts', $request)->throw();
     }
 }
