@@ -4,6 +4,10 @@ namespace App\Domain;
 
 class PostAuthorLinkerService implements IPostAuthorLinkerService
 {
+    /**
+     * link each post with an author.
+     * @return array<mixed>
+     */
     public function linkPostAuthor()
     {
         $posts = app(IPostSearcherService::class)->getPosts()->object();

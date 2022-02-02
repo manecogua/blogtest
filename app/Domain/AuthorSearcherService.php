@@ -9,7 +9,7 @@ class AuthorSearcherService implements IAuthorSearcherService
         return app(IAuthorSearcherAdapter::class)->getAuthors();
     }
 
-    public function getAuthor($id)
+    public function getAuthor(int $id)
     {
         return app(IAuthorSearcherAdapter::class)->getAuthor($id);
     }

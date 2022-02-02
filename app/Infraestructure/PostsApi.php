@@ -12,7 +12,7 @@ class PostsApi implements IPostsApi
         return Http::get(env('URL_JSONPLACEHOLDER_API').'/posts');
     }
 
-    public function getPost($id): Response
+    public function getPost(int $id): Response
     {
         return Http::get(env('URL_JSONPLACEHOLDER_API').'/posts/'.$id);
     }

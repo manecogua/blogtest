@@ -16,5 +16,5 @@ interface IPostSearcherService
      *
      * @return \Illuminate\Http\Client\Response
      */
-    public function getPost($id);
+    public function getPost(int $id);
 }

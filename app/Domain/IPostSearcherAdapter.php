@@ -4,7 +4,15 @@ namespace App\Domain;
 
 interface IPostSearcherAdapter
 {
+    /**
+     * Get list of posts.
+     * @return \Illuminate\Http\Client\Response
+     */
     public function getPosts();
 
-    public function getPost($id);
+    /**
+     * Get a specified post.
+     * @return \Illuminate\Http\Client\Response
+     */
+    public function getPost(int $id);
 }

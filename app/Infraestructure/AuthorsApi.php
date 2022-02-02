@@ -12,7 +12,7 @@ class AuthorsApi implements IAuthorsApi
         return Http::get(env('URL_JSONPLACEHOLDER_API').'/users');
     }
 
-    public function getAuthor($id): Response
+    public function getAuthor(int $id): Response
     {
         return Http::get(env('URL_JSONPLACEHOLDER_API').'/users/'.$id);
     }

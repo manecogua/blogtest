@@ -9,7 +9,7 @@ class PostSearcherService implements IPostSearcherService
         return app(IPostSearcherAdapter::class)->getPosts();
     }
 
-    public function getPost($id)
+    public function getPost(int $id)
     {
         return app(IPostSearcherAdapter::class)->getPost($id);
     }

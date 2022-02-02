@@ -8,5 +8,5 @@ interface IAuthorsApi
 {
     public function getAuthors(): Response;
 
-    public function getAuthor($id): Response;
+    public function getAuthor(int $id): Response;
 }

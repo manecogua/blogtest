@@ -16,5 +16,5 @@ interface IAuthorSearcherService
      *
      * @return mixed
      */
-    public function getAuthor($id);
+    public function getAuthor(int $id);
 }
