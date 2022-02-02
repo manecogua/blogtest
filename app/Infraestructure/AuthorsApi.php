@@ -5,7 +5,7 @@ namespace App\Infraestructure;
 use Illuminate\Support\Facades\Http;
 use \Illuminate\Http\Client\Response;
 
-class AuthorsApi
+class AuthorsApi implements IAuthorsApi
 {
     public function getAuthors() : Response
     {

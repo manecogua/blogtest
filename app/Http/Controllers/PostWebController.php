@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Infraestructure\PostsApi;
-use App\Infraestructure\AuthorsApi;
+use App\Infraestructure\IPostsApi;
+use App\Infraestructure\IAuthorsApi;
 
 class PostWebController extends Controller
 {
@@ -14,9 +14,9 @@ class PostWebController extends Controller
      *
      * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
-    public function getPosts(PostsApi $postsApi)
+    public function getPosts(IPostsApi $iPostsApi)
     {
-        $arrayPosts = $postsApi->getPosts()->object();
+        $arrayPosts = $iPostsApi->getPosts()->object();
 
         return view('posts', compact('arrayPosts'));
     }
@@ -26,10 +26,10 @@ class PostWebController extends Controller
      *
      * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
-    public function getPost(PostsApi $postsApi, AuthorsApi $authorsApi, $id)
+    public function getPost(IPostsApi $iPostsApi, IAuthorsApi $iAuthorsApi, $id)
     {
-        $post = $postsApi->getPost($id)->object();
-        $author = $authorsApi->getAuthor($id)->object();
+        $post = $iPostsApi->getPost($id)->object();
+        $author = $iAuthorsApi->getAuthor($id)->object();
 
         return view('post', compact('post', 'author'));
     }
