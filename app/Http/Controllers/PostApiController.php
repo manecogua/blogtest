@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Domain\IPostAuthorLinkerService;
 use App\Domain\IPostStorerService;
 use App\Http\Requests\StorePostRequest;
+use Illuminate\Http\Request;
 
 class PostApiController extends Controller
 {

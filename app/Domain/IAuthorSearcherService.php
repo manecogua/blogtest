@@ -10,12 +10,11 @@ interface IAuthorSearcherService
      * @return mixed
      */
     public function getAuthors();
-    
+
     /**
      * Get especified author.
      *
      * @return mixed
      */
     public function getAuthor($id);
-
 }

@@ -8,7 +8,6 @@ use App\Domain\IPostSearcherService;
 
 class PostWebController extends Controller
 {
-
     /**
      * Display listing of posts.
      *

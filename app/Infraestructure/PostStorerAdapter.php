@@ -7,8 +7,8 @@ use Illuminate\Http\Client\Response;
 
 class PostStorerAdapter implements IPostStorerAdapter
 {
-    public function storePost(array $request) : Response
+    public function storePost(array $request): Response
     {
-     return app(IPostsApi::class)->storePost($request);   
+        return app(IPostsApi::class)->storePost($request);
     }
 }

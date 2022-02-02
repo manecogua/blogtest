@@ -5,17 +5,16 @@ namespace App\Domain;
 interface IPostSearcherService
 {
     /**
-     * Getlist of posts
+     * Getlist of posts.
      *
      * @return \Illuminate\Http\Client\Response
      */
     public function getPosts();
-    
+
     /**
-     * Get especified post
+     * Get especified post.
      *
      * @return \Illuminate\Http\Client\Response
      */
     public function getPost($id);
-
 }
