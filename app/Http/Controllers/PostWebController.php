@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Domain\IAuthorSearcherService;
 use App\Domain\IPostAuthorLinkerService;
 use App\Domain\IPostSearcherService;
-use Illuminate\Http\Request;
 
 class PostWebController extends Controller
 {
@@ -30,7 +29,7 @@ class PostWebController extends Controller
     public function getPost(IPostSearcherService $iPostSearcherService, IAuthorSearcherService $iAuthorSearcherService, int $id)
     {
         $post = $iPostSearcherService->getPost($id)->object();
-        $author = $iAuthorSearcherService->getAuthor($id)->object();
+        $author = $iAuthorSearcherService->getAuthor($post->userId)->object();
 
         return view('post', compact('post', 'author'));
     }
