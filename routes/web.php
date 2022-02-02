@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PostSearcherController;
+use App\Http\Controllers\Web\PostSearcherController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +19,4 @@ Route::get('/', function () {
 });
 
 Route::get('posts', [PostSearcherController::class, 'getPosts']);
+Route::get('posts/{id}', [PostSearcherController::class, 'getPost']);

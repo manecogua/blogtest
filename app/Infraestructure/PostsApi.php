@@ -11,4 +11,9 @@ class PostsApi
     {
         return Http::get(env('URL_JSONPLACEHOLDER_API').'/posts');
     }
+
+    public function getPost($id) : Response
+    {
+        return Http::get(env('URL_JSONPLACEHOLDER_API').'/posts/'.$id);
+    }
 }
