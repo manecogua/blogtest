@@ -10,7 +10,10 @@ class PostSearcherAdapter implements IPostSearcherAdapter
 {
 
     public function getPosts() {
-        $arrayPosts = app(IPostsApi::class)->getPosts()->object();
-        return $arrayPosts;
+        return app(IPostsApi::class)->getPosts();
+    }
+
+    public function getPost($id) {
+        return app(IPostsApi::class)->getPost($id);
     }
 }
