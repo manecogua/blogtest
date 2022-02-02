@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Web;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Infraestructure\PostsApi;
 use App\Infraestructure\AuthorsApi;
-use App\Http\Controllers\Controller;
 
-class PostSearcherController extends Controller
+class PostWebController extends Controller
 {
 
     /**

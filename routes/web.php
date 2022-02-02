@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Web\PostSearcherController;
+use App\Http\Controllers\PostWebController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,5 +18,5 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('posts', [PostSearcherController::class, 'getPosts']);
-Route::get('posts/{id}', [PostSearcherController::class, 'getPost']);
+Route::get('posts', [PostWebController::class, 'getPosts']);
+Route::get('posts/{id}', [PostWebController::class, 'getPost']);
