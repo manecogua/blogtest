@@ -9,7 +9,7 @@ class Post
     private String $body;
     private Author $author;
 
-    private function __construct(int $id, String $title, String $body, Author $author)
+    private function __construct(int $id, string $title, string $body, Author $author)
     {
         $this->id = $id;
         $this->$title = $title;
@@ -17,17 +17,17 @@ class Post
         $this->author = $author;
     }
 
-    public function getId() : int
+    public function getId(): int
     {
         return $this->id;
     }
 
-    public function getTitle() : String
+    public function getTitle(): string
     {
         return $this->title;
     }
 
-    public function getBody() : String
+    public function getBody(): string
     {
         return $this->body;
     }

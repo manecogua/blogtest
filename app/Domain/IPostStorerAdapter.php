@@ -8,6 +8,7 @@ interface IPostStorerAdapter
 {
     /**
      * Store a post.
+     *
      * @param array<mixed> $request
      */
     public function storePost(array $request): Response;

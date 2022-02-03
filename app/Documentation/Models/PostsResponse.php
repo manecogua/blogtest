@@ -7,19 +7,16 @@
 namespace BlogTest;
 
 /**
- * Class PostsResponse
- *
- * @package BlogTest\controllers
+ * Class PostsResponse.
  *
  * @author  MC <manuelcogua@blogtest.com>
-  * @OA\Schema(
+ * @OA\Schema(
  *     title="Post model",
  *     description="Post model",
  * )
  */
 class PostsResponse
 {
-
     /**
      * @OA\Property(
      *     default=1,
@@ -32,7 +29,6 @@ class PostsResponse
      */
     private $userId;
 
-    
     /**
      * @OA\Property(
      *     default=1,
@@ -77,6 +73,4 @@ class PostsResponse
      * @var \BlogTest\Authors
      */
     private $author;
-
-    
 }

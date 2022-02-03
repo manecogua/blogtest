@@ -7,9 +7,7 @@
 namespace BlogTest;
 
 /**
- * Class Posts
- *
- * @package BlogTest\controllers
+ * Class Posts.
  *
  * @author  MC <manuelcogua@blogtest.com>
  * @OA\Schema(
@@ -19,7 +17,6 @@ namespace BlogTest;
  */
 class Posts
 {
-
     /**
      * @OA\Property(
      *     default="Text body",
@@ -64,9 +61,7 @@ class Posts
      *     description="ID",
      * )
      *
-     * @var integer
+     * @var int
      */
     private $id;
-
-    
 }

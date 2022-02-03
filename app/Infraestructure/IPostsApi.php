@@ -8,22 +8,18 @@ interface IPostsApi
 {
     /**
      * Display listing of posts.
-     *
-     * @return \Illuminate\Http\Client\Response
      */
     public function getPosts(): Response;
 
     /**
      * Display especified of post.
-     *
-     * @return \Illuminate\Http\Client\Response
      */
     public function getPost(int $id): Response;
 
     /**
      * Store a post.
+     *
      * @param array<mixed> $request
-     * @return \Illuminate\Http\Client\Response
      */
     public function storePost(array $request): Response;
 }

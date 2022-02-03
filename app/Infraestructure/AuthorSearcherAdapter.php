@@ -7,12 +7,12 @@ use Illuminate\Http\Client\Response;
 
 class AuthorSearcherAdapter implements IAuthorSearcherAdapter
 {
-    public function getAuthors() : Response
+    public function getAuthors(): Response
     {
         return app(IAuthorsApi::class)->getAuthors();
     }
 
-    public function getAuthor(int $id) : Response
+    public function getAuthor(int $id): Response
     {
         return app(IAuthorsApi::class)->getAuthor($id);
     }

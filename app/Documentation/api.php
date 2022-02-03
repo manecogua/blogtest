@@ -1,6 +1,6 @@
 <?php
 
-/**
+/*
  * @OA\Info(
  *      version="1.0.0",
  *      title="Prueba Técnica API OpenApi",
@@ -15,7 +15,7 @@
  * )
  */
 
-/**
+/*
  *  @OA\Server(
  *      url=L5_SWAGGER_CONST_HOST,
  *      description="demo server"
@@ -23,7 +23,7 @@
  *
  */
 
-/**
+/*
  * @OA\OpenApi(
  *   security={
  *     {

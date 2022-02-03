@@ -6,6 +6,7 @@ class PostAuthorLinkerService implements IPostAuthorLinkerService
 {
     /**
      * link each post with an author.
+     *
      * @return array<mixed>
      */
     public function linkPostAuthor()

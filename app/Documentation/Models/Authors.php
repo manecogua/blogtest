@@ -7,9 +7,7 @@
 namespace BlogTest;
 
 /**
- * Class Author
- *
- * @package BlogTest\controllers
+ * Class Author.
  *
  * @author  MC <manuelcogua@blogtest.com>
  * @OA\Schema(
@@ -19,7 +17,6 @@ namespace BlogTest;
  */
 class Authors
 {
-
     /**
      * @OA\Property(
      *     format="int64",
@@ -28,7 +25,7 @@ class Authors
      *     description="ID",
      * )
      *
-     * @var integer
+     * @var int
      */
     private $id;
 
@@ -67,7 +64,4 @@ class Authors
      * @var string
      */
     private $email;
-
-
-    
 }

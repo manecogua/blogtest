@@ -11,7 +11,7 @@ class Author
     private String $website;
     private String $company;
 
-    private function __construct(int $id, String $name, String $email, String $city, String $website, String $company)
+    private function __construct(int $id, string $name, string $email, string $city, string $website, string $company)
     {
         $this->id = $id;
         $this->$name = $name;

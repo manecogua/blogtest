@@ -7,9 +7,7 @@
 namespace BlogTes;
 
 /**
- * Class PostRequest
- *
- * @package BlogTest\controllers
+ * Class PostRequest.
  *
  * @author  MC <manuelcogua@blogtest.com>
  * @OA\Schema(
@@ -54,6 +52,4 @@ class PostRequest
      * @var int
      */
     private $userId;
-
-    
 }

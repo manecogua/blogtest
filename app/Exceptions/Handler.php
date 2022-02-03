@@ -38,7 +38,6 @@ class Handler extends ExceptionHandler
     public function register()
     {
         $this->reportable(function (Throwable $e) {
-            
         });
 
         $this->renderable(function (Throwable $e, $request) {
@@ -46,33 +45,31 @@ class Handler extends ExceptionHandler
         });
     }
 
-    
     /**
      * Register the exception handling callbacks for the application.
      *
      * @return void
      */
-    public function handlerAppException(Throwable $e, $request) {
+    public function handlerAppException(Throwable $e, $request)
+    {
         if ($request->is('api/*')) {
-
             $code = 520;
             $message = 'Error';
 
-            if ( $e instanceof ConnectionException ) {
+            if ($e instanceof ConnectionException) {
                 $code = 510;
                 $message = 'Third party not available.';
-            } 
-             else if ( $e instanceof RequestException ) {
+            } elseif ($e instanceof RequestException) {
                 $code = 404;
                 $message = 'Request not valid.';
-            }
-             else if ( $e instanceof NotFoundHttpException ) {
+            } elseif ($e instanceof NotFoundHttpException) {
                 $code = 404;
                 $message = 'Resource not found.';
             }
-            
-            if ( !$e instanceof ValidationException )
+
+            if (!$e instanceof ValidationException) {
                 return response()->json(['message' => $message], $code);
+            }
         } else {
             return response()->view('errors.invalid-order', [], 500);
         }
