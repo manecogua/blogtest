@@ -11,19 +11,26 @@
 
   </head>
   <body>
-      <div class="container">
+      <div class="container-fluid">
           <div class="row">
-            <h1>Prueba Técnica</h1>
-          </div>
-          <div class="row">
-            <ul class="nav justify-content-center|justify-content-end">
-                <li class="nav-item">
-                    <a class="nav-link active" href="{{ url('/') }}">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/posts') }}">Posts</a>
-                </li>
-            </ul>
+            <div class="container-fluid bg-dark ml-4 mr-4">
+              <div class="row">
+                <h1 class="text-light">Prueba Técnica</h1>
+                <div class="row">
+                  <ul class="nav justify-content-center|justify-content-end">
+                      <li class="nav-item">
+                          <a class="nav-link active" href="{{ url('/') }}">Home</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="{{ url('/posts') }}">Posts</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="{{ url('api/documentation') }}" target="_blank">Swagger</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="row mt-5">
               <div class="container">

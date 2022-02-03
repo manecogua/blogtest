@@ -47,6 +47,8 @@ class AppServiceProvider extends ServiceProvider
 
         $this->app->singleton(IPostStorerService::class, PostStorerService::class);
         $this->app->singleton(IPostStorerAdapter::class, PostStorerAdapter::class);
+
+        $this->app->register(\L5Swagger\L5SwaggerServiceProvider::class);
     }
 
     /**

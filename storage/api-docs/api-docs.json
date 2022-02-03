@@ -1,0 +1,241 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Prueba Técnica API OpenApi",
+        "description": "API documentation",
+        "contact": {
+            "email": "manuelcogua@outlook.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://127.0.0.1:8000/api/",
+            "description": "demo server"
+        }
+    ],
+    "paths": {
+        "/posts": {
+            "get": {
+                "tags": [
+                    "posts"
+                ],
+                "summary": "Returns list of posts",
+                "description": "Returns list of post and authors information",
+                "operationId": "getPosts",
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/PostsResponse"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "posts"
+                ],
+                "summary": "Add a new post.",
+                "operationId": "storePost",
+                "requestBody": {
+                    "description": "data post for saving",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PostRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Posts"
+                                }
+                            },
+                            "application/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Posts"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "bad request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Posts"
+                                }
+                            },
+                            "application/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Posts"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Authors": {
+                "title": "Author model",
+                "description": "Author model",
+                "properties": {
+                    "id": {
+                        "title": "ID",
+                        "description": "ID",
+                        "type": "integer",
+                        "format": "int64",
+                        "default": 1
+                    },
+                    "name": {
+                        "title": "Name",
+                        "description": "Name",
+                        "type": "string",
+                        "format": "string",
+                        "default": "Leanne Graham"
+                    },
+                    "username": {
+                        "title": "Username",
+                        "description": "Username",
+                        "type": "string",
+                        "format": "string",
+                        "default": "Bret"
+                    },
+                    "email": {
+                        "title": "Email",
+                        "description": "Email",
+                        "type": "string",
+                        "format": "string",
+                        "default": "Sincere@april.biz"
+                    }
+                },
+                "type": "object"
+            },
+            "PostRequest": {
+                "title": "Post request model",
+                "description": "Post request model",
+                "properties": {
+                    "title": {
+                        "title": "Title",
+                        "description": "Title",
+                        "type": "string",
+                        "format": "string",
+                        "default": "title"
+                    },
+                    "body": {
+                        "title": "Body",
+                        "description": "Body",
+                        "type": "string",
+                        "format": "string",
+                        "default": "Text body"
+                    },
+                    "userId": {
+                        "title": "User ID",
+                        "description": "User ID",
+                        "type": "integer",
+                        "format": "int32",
+                        "default": 1
+                    }
+                },
+                "type": "object"
+            },
+            "Posts": {
+                "title": "Post model",
+                "description": "Post model",
+                "properties": {
+                    "body": {
+                        "title": "Body",
+                        "description": "Body",
+                        "type": "string",
+                        "format": "string",
+                        "default": "Text body"
+                    },
+                    "userId": {
+                        "title": "User ID",
+                        "description": "User ID",
+                        "type": "integer",
+                        "format": "int32",
+                        "default": 1
+                    },
+                    "title": {
+                        "title": "Title",
+                        "description": "Title",
+                        "type": "string",
+                        "format": "string",
+                        "default": "title"
+                    },
+                    "id": {
+                        "title": "ID",
+                        "description": "ID",
+                        "type": "integer",
+                        "format": "int64",
+                        "default": 1
+                    }
+                },
+                "type": "object"
+            },
+            "PostsResponse": {
+                "title": "Post model",
+                "description": "Post model",
+                "properties": {
+                    "userId": {
+                        "title": "User ID",
+                        "description": "User ID",
+                        "type": "integer",
+                        "format": "int32",
+                        "default": 1
+                    },
+                    "id": {
+                        "title": "ID",
+                        "description": "ID",
+                        "type": "integer",
+                        "format": "int32",
+                        "default": 1
+                    },
+                    "title": {
+                        "title": "Title",
+                        "description": "Title",
+                        "type": "string",
+                        "format": "string",
+                        "default": "title"
+                    },
+                    "body": {
+                        "title": "Body",
+                        "description": "Body",
+                        "type": "string",
+                        "format": "string",
+                        "default": "Text body"
+                    },
+                    "author": {
+                        "$ref": "#/components/schemas/Authors"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    },
+    "security": [
+        []
+    ]
+}
