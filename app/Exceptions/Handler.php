@@ -5,6 +5,7 @@ namespace App\Exceptions;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Http\Client\RequestException;
+use Illuminate\Validation\ValidationException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Throwable;
 
@@ -70,10 +71,8 @@ class Handler extends ExceptionHandler
                 $message = 'Resource not found.';
             }
             
-
-            return response()->json([
-                'message' => $message
-            ], $code);
+            if ( !$e instanceof ValidationException )
+                return response()->json(['message' => $message], $code);
         } else {
             return response()->view('errors.invalid-order', [], 500);
         }
